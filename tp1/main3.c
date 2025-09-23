@@ -73,7 +73,7 @@ matrix_t* SaisirMatrice(void)
 		for (uint32_t j = 0; j < m; j++)
 		{
 			printf("Coefficient (%u,%u): ", i, j);
-			if (scanf("%u", &mtx->elements[matrix_index(mtx, i, j)]) != 1)
+			if (scanf("%lu", &mtx->elements[matrix_index(mtx, i, j)]) != 1)
 			{
 				liberer_matrice(mtx);
 				return NULL;
@@ -95,7 +95,7 @@ void AfficherMatrice(matrix_t* mtx)
 	{
 		for (uint32_t j = 0; j < mtx->m; j++)
 		{
-			printf("%u ", mtx->elements[matrix_index(mtx, i, j)]);
+			printf("%lu ", mtx->elements[matrix_index(mtx, i, j)]);
 		}
 
 		printf("\n");
@@ -209,7 +209,7 @@ void TrouvePointsClos(matrix_t* mtx)
 			uint32_t index = matrix_index(mtx, i, j);
 			if (MaxLig->elements[index] == 1 && MinCol->elements[index] == 1)
 			{
-				printf("Point clos (%u,%u): %u\n", i, j, mtx->elements[index]);
+				printf("Point clos (%u,%u): %lu\n", i, j, mtx->elements[index]);
 			}
 		}
 	}
