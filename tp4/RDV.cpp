@@ -104,6 +104,7 @@ void RDV::setNombreDeParticipants(int nombreDeParticipants)
 
 void RDV::setParticipants(std::string* ps)
 {
+	delete[] participants;
 	participants = ps;
 }
 
@@ -117,6 +118,18 @@ void RDV::setParticipant(int i, std::string s)
 
 bool RDV::estCompatibleAvec(RDV r) const
 {
-	return date.jour() != r.date.jour() || date.mois() != r.date.mois() || date.annee() != r.date.annee();
+	return !date.estEgal(r.date) || !heure.estEgal(r.heure);
 }
+
+bool RDV::estEgal(const RDV& r) const
+{
+	return date.estEgal(r.date) && heure.estEgal(r.heure);
+}
+
+bool RDV::estSuperieur(const RDV& r) const
+{
+	return date.estSuperieur(r.date) && (!date.estEgal(r.date) || heure.estSuperieur(r.heure));
+}
+
+
 

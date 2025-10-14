@@ -21,6 +21,10 @@ public:
 	void minute(unsigned int minute);
 
 	void affiche() const;
+
+	bool estEgal(const Heure& h) const;
+
+	bool estSuperieur(const Heure& h) const;
 };
 
 #endif

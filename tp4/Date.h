@@ -26,6 +26,10 @@ public:
 	void annee(unsigned int annee);
 
 	void affiche() const;
+
+	bool estEgal(const Date& d) const;
+
+	bool estSuperieur(const Date& d) const;
 };
 
 #endif

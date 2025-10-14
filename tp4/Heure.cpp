@@ -57,6 +57,16 @@ void Heure::affiche() const
 	std::cout << "Heure[heure=" << _heure << ", minute=" << _minute << "]" << std::endl;
 }
 
+bool Heure::estEgal(const Heure& h) const
+{
+	return _heure == h._heure && _minute == h._minute;
+}
+
+bool Heure::estSuperieur(const Heure& h) const
+{
+	return _heure > h._heure || (_heure == h._heure && _minute >= h._minute);
+}
+
 bool Heure::checkHeure(unsigned int heure, unsigned int minute)
 {
 	return _checkHeure(heure) && _checkMinute(minute);

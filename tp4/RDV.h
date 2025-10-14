@@ -40,6 +40,10 @@ public:
 	void setParticipant(int i, std::string s);
 
 	bool estCompatibleAvec(RDV r) const;
+
+	bool estEgal(const RDV& r) const;
+
+	bool estSuperieur(const RDV& r) const;
 };
 
 #endif

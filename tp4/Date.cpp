@@ -62,6 +62,16 @@ void Date::affiche() const
 	std::cout << "Date[jour=" << _jour << ", mois=" << _mois << ", annee=" << _annee << "]" << std::endl;
 }
 
+bool Date::estEgal(const Date& d) const
+{
+	return _jour == d._jour && _mois == d._mois && _annee == d._annee;
+}
+
+bool Date::estSuperieur(const Date& d) const
+{
+	return _annee > d._annee || (_annee == d._annee && (_mois > d._mois || (_mois == d._mois && _jour >= d._jour)));
+}
+
 bool Date::checkDate(unsigned int jour, unsigned int mois, unsigned int annee)
 {
 	return 1 <= jour && jour <= 31 && 1 <= mois && mois <= 12 && 2000 <= annee && annee <= 2050;
