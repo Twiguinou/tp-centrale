@@ -20,3 +20,9 @@ add_executable(tp5 tp5/main.cpp tp5/Agenda.cpp tp5/NoeudRDV.cpp)
 target_include_directories(tp5 PRIVATE tp4)
 target_link_libraries(tp5 tp4_lib)
 
+add_library(tp6_lib STATIC tp6/Personne.cpp tp6/Eleve.cpp tp6/Personnel.cpp tp6/PersonnelAdmin.cpp tp6/EnseignantPermanent.cpp tp6/EnseignantVacataire.cpp tp6/ListePersonnel.cpp)
+add_executable(tp6_test1 tp6/main_test1.cpp)
+target_link_libraries(tp6_test1 tp6_lib)
+add_executable(tp6_test2 tp6/main_test2.cpp)
+target_link_libraries(tp6_test2 tp6_lib)
+
