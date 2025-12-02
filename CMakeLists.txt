@@ -28,3 +28,8 @@ target_link_libraries(tp6_test2 tp6_lib)
 
 add_executable(tp8 tp8/main.cpp tp8/Vector.cpp)
 
+add_executable(tp9_1 tp9/main1.cpp)
+add_executable(tp9_2 tp9/main2.cpp)
+add_executable(tp9_3 tp9/main3.cpp)
+add_executable(tp9_4 tp9/main4.cpp)
+
